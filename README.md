@@ -2,7 +2,9 @@
 
 Windows上の様々なアプリケーションで選択したテキストの文字数と単語数をリアルタイムでカウントし、オーバーレイ表示およびタスクトレイアイコンの状態で示すユーティリティです。
 
-## 主な機能
+---
+
+## 特徴
 
 - **リアルタイムカウント**: テキストを選択すると即座に文字数と単語数を表示
 - **タスクトレイ表示**: アプリケーションのアクティブ状態（テキスト選択中「✓」／非選択「-」）をタスクトレイアイコンで表示。詳細な文字数・単語数はツールチップに表示。
@@ -17,16 +19,22 @@ Windows上の様々なアプリケーションで選択したテキストの文�
     - UI言語（日本語/英語）
 - **ログ機能**: (オプション) 選択されたテキストの情報をログとして記録
 
+---
+
 ## 動作環境
 
 - Windows 10 / Windows 11
-- .NET 8.0 Desktop Runtime が必要です。[こちらからダウンロード](https://dotnet.microsoft.com/download/dotnet/8.0)してください。
+- .NET 8.0 Desktop Runtime が必要です。[ダウンロードはこちら](https://dotnet.microsoft.com/download/dotnet/8.0)
+
+---
 
 ## インストールと実行
 
-1.  [リリースページ](https://github.com/got5102/textlength/releases) から最新版の `TextLength_vx.x.x.zip` をダウンロードします。
-2.  ダウンロードしたZIPファイルを任意の場所に解凍します。
-3.  解凍したフォルダ内の `TextLength.exe` を実行します。
+1. [リリースページ](https://github.com/got5102/textlength/releases) から最新版の `TextLength_vx.x.x.zip` をダウンロードします。
+2. ダウンロードしたZIPファイルを任意の場所に解凍します。
+3. 解凍したフォルダ内の `TextLength.exe` を実行します。
+
+---
 
 ## 使い方
 
@@ -41,22 +49,56 @@ Windows上の様々なアプリケーションで選択したテキストの文�
     - **終了**: アプリケーションを終了します。
 - 設定画面で各種オプションをカスタマイズできます。
 
-## ビルド方法 (開発者向け)
+---
 
-1.  このリポジトリをクローンします: `git clone https://github.com/got5102/textlength.git`
-2.  Visual Studio 2022 (または互換性のあるIDE) で `TextLength.sln` を開きます。
-3.  ソリューションをビルドします。 (Ctrl+Shift+B)
-4.  出力ディレクトリ (`TextLength/bin/Debug/net8.0-windows/` または `TextLength/bin/Release/net8.0-windows/`) に `TextLength.exe` が生成されます。
+## よくある質問（FAQ）
+
+### Q. .NET 8.0がインストールされていませんと表示される
+A. [公式サイト](https://dotnet.microsoft.com/download/dotnet/8.0)から「.NET 8.0 Desktop Runtime」をインストールしてください。
+
+### Q. アプリが起動しない／動作しない
+A. セキュリティソフトや管理者権限の影響が考えられます。`TextLength.exe`を右クリックし「管理者として実行」してみてください。
+
+### Q. ショートカットキーが効かない
+A. 他のアプリと競合している可能性があります。設定画面でショートカットキーを変更してください。
+
+### Q. ログファイルはどこに保存されますか？
+A. デフォルトでは `%LOCALAPPDATA%/TextLength/Logs/` に保存されます。
+
+---
+
+## 開発・ビルド方法（開発者向け）
+
+1. このリポジトリをクローンします: `git clone https://github.com/got5102/textlength.git`
+2. Visual Studio 2022（または互換性のあるIDE）で `TextLength.sln` を開きます。
+3. ソリューションをビルドします（Ctrl+Shift+B）。
+4. 出力ディレクトリ（`TextLength/bin/Debug/net8.0-windows/` または `TextLength/bin/Release/net8.0-windows/`）に `TextLength.exe` が生成されます。
+
+---
+
+## コントリビュート（貢献）
+
+バグ報告・機能要望・プルリクエスト歓迎です！
+- Issueを立てる際は、再現手順や環境情報をできるだけ詳しく記載してください。
+- コード修正時は、既存のコーディングスタイル・コメント方針に合わせてください。
+- 大きな機能追加の場合は、事前にIssueやディスカッションでご相談ください。
+
+---
 
 ## ライセンス
 
 このプロジェクトは [MIT License](LICENSE.txt) の下で公開されています。
 
-## 使用ライブラリと謝辞
+---
 
-- [Hardcodet.NotifyIcon.Wpf](https://github.com/hardcodet/wpf-notifyicon) - タスクトレイアイコンの実装に使用しています。
-- [CommunityToolkit.Mvvm](https://github.com/CommunityToolkit/dotnet) - MVVMパターンの実装に活用しています。
+## 使用ライブラリ・謝辞
+
+- [Hardcodet.NotifyIcon.Wpf](https://github.com/hardcodet/wpf-notifyicon) - タスクトレイアイコンの実装に使用
+- [CommunityToolkit.Mvvm](https://github.com/CommunityToolkit/dotnet) - MVVMパターンの実装に活用
 - その他、.NET標準ライブラリ
 
+---
+
 ## 作者
+
 後藤 慧 (Kei Goto)
