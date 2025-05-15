@@ -1,0 +1,59 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+
+    <!-- Window Titles -->
+    <system:String x:Key="WindowTitle_Settings">TextLength - Settings</system:String>
+    
+    <!-- Tab Headers -->
+    <system:String x:Key="TabHeader_BasicSettings">Basic Settings</system:String>
+    <system:String x:Key="TabHeader_DisplaySettings">Display Settings</system:String>
+    <system:String x:Key="TabHeader_HistorySettings">History Settings</system:String>
+    <system:String x:Key="TabHeader_ShortcutSettings">Shortcut Key Settings</system:String>
+    
+    <!-- Basic Settings -->
+    <system:String x:Key="Setting_AutoStart">Start automatically when Windows starts</system:String>
+    <system:String x:Key="Setting_IgnoreSpaces">Ignore spaces in selected text</system:String>
+    <system:String x:Key="Setting_IgnoreLineBreaks">Ignore line breaks in selected text</system:String>
+    <system:String x:Key="Setting_ShowWordCount">Show word count</system:String>
+    <system:String x:Key="Setting_DisplayDuration">Display duration:</system:String>
+    <system:String x:Key="Setting_DisplayDurationFormat">{0} seconds</system:String>
+    <system:String x:Key="Setting_Language">Language:</system:String>
+    
+    <!-- Display Settings -->
+    <system:String x:Key="Setting_DisplayPosition">Display position:</system:String>
+    <system:String x:Key="Setting_FontSize">Font size:</system:String>
+    <system:String x:Key="Setting_FontColor">Font color:</system:String>
+    <system:String x:Key="Setting_BackgroundColor">Background color:</system:String>
+    
+    <!-- History Settings -->
+    <system:String x:Key="Setting_LogTextSelection">Log text selection to file</system:String>
+    <system:String x:Key="Setting_OpenLogDirectory">Open Log Directory</system:String>
+    
+    <!-- Shortcut Settings -->
+    <system:String x:Key="ShortcutTab_Traditional">Traditional Method</system:String>
+    <system:String x:Key="ShortcutTab_DirectInput">Direct Input Method</system:String>
+    <system:String x:Key="Shortcut_Modifiers">Modifier keys:</system:String>
+    <system:String x:Key="Shortcut_Key">Key:</system:String>
+    <system:String x:Key="Shortcut_ShortcutKey">Shortcut key:</system:String>
+    <system:String x:Key="Shortcut_CaptureButton">Waiting for key input...</system:String>
+    <system:String x:Key="Shortcut_CaptureCancel">Cancel</system:String>
+    <system:String x:Key="Shortcut_Note1">※ Press any key on the keyboard to register.</system:String>
+    <system:String x:Key="Shortcut_Note2">※ Mouse side buttons are also available.</system:String>
+    
+    <!-- Buttons -->
+    <system:String x:Key="Button_Cancel">Cancel</system:String>
+    <system:String x:Key="Button_Apply">Apply</system:String>
+    <system:String x:Key="Button_OK">OK</system:String>
+    
+    <!-- Context Menu -->
+    <system:String x:Key="Menu_GetClipboardText">Get text from clipboard</system:String>
+    <system:String x:Key="Menu_Enable">Enable</system:String>
+    <system:String x:Key="Menu_Settings">Settings...</system:String>
+    <system:String x:Key="Menu_ManualRefresh">Manual refresh</system:String>
+    <system:String x:Key="Menu_Exit">Exit</system:String>
+    <system:String x:Key="Menu_CharCount">Characters: {0} / Words: {1}</system:String>
+    <system:String x:Key="Tooltip_Default">TextLength - Character counter for selected text</system:String>
+    <system:String x:Key="Tooltip_WithCount">TextLength - {0} chars / {1} words</system:String>
+    
+</ResourceDictionary> 
