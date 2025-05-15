@@ -5,58 +5,55 @@ using System.Diagnostics;
 namespace TextLength.Models
 {
     /// <summary>
-    /// 選択されたテキストの情報を保持します。
+    /// 選択されたテキストの情報をまとめて管理するクラス
     /// </summary>
     public class TextSelectionInfo
     {
         /// <summary>
-        /// 選択されたテキスト。
+        /// 実際に選択されたテキスト
         /// </summary>
         private string _selectedText = string.Empty;
-        
         public string SelectedText 
         { 
             get => _selectedText;
-            set => _selectedText = value ?? string.Empty; // null保護
+            set => _selectedText = value ?? string.Empty; // null対策
         }
         
         /// <summary>
-        /// 文字数。
+        /// 文字数
         /// </summary>
         public int CharacterCount { get; set; }
         
         /// <summary>
-        /// 単語数。
+        /// 単語数
         /// </summary>
         public int WordCount { get; set; }
         
         /// <summary>
-        /// テキスト選択の終了位置（オーバーレイ表示の基準点など）。
+        /// 選択範囲の終了座標（オーバーレイ表示の基準など）
         /// </summary>
         public Point SelectionEndPoint { get; set; }
         
         /// <summary>
-        /// この情報がアクティブな選択（例：ユーザーが現在選択している範囲）からのものか。
+        /// 現在アクティブな選択かどうか
         /// </summary>
         private bool _isActive;
         public bool IsActive 
         { 
             get => _isActive; 
-            // 内部的に設定可能に
             internal set => _isActive = value;
         }
 
         /// <summary>
-        /// この情報がキーボードショートカットによってトリガーされたかどうかを示します。
+        /// ショートカットでトリガーされたか
         /// </summary>
         public bool TriggeredByShortcut { get; }
 
         /// <summary>
-        /// デフォルトコンストラクタ（主にダミーデータや初期化用）。
+        /// デフォルトコンストラクタ
         /// </summary>
         public TextSelectionInfo()
         {
-            // デフォルト値を明示的に設定
             _selectedText = string.Empty;
             CharacterCount = 0;
             WordCount = 0;
@@ -66,7 +63,7 @@ namespace TextLength.Models
         }
 
         /// <summary>
-        /// 完全な情報を持つ TextSelectionInfo を作成します。
+        /// すべての情報を指定して初期化
         /// </summary>
         /// <param name="selectedText">選択されたテキスト。</param>
         /// <param name="selectionEndPoint">テキスト選択の終了位置。</param>
@@ -82,7 +79,7 @@ namespace TextLength.Models
             bool isActive = true,
             bool triggeredByShortcut = false)
         {
-            SelectedText = selectedText ?? string.Empty; // null保護
+            SelectedText = selectedText ?? string.Empty;
             SelectionEndPoint = selectionEndPoint;
             CharacterCount = characterCount;
             WordCount = wordCount;

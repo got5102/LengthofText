@@ -4,11 +4,13 @@ using TextLength.Models;
 
 namespace TextLength.Services
 {
+    // ファイルにログを書き込むサービス
     public class FileLogService : ILogService
     {
         private readonly AppSettings _settings;
         private readonly string _basePath;
 
+        // 設定を受け取って初期化。ログディレクトリも作成
         public FileLogService(AppSettings settings)
         {
             _settings = settings;
@@ -21,6 +23,7 @@ namespace TextLength.Services
             EnsureLogDirectoryExists();
         }
 
+        // ログディレクトリがなければ作成
         private void EnsureLogDirectoryExists()
         {
             try
@@ -36,6 +39,7 @@ namespace TextLength.Services
             }
         }
 
+        // 情報ログを出力
         public void LogInfo(string message)
         {
             if (!_settings.LoggingEnabled) return;
@@ -43,18 +47,21 @@ namespace TextLength.Services
             WriteToLog("INFO", message);
         }
 
+        // デバッグログを出力
         public void LogDebug(string message)
         {
             if (!_settings.LoggingEnabled) return;
             WriteToLog("DEBUG", message);
         }
 
+        // 警告ログを出力
         public void LogWarning(string message)
         {
             if (!_settings.LoggingEnabled) return;
             WriteToLog("WARNING", message);
         }
 
+        // エラーログを出力
         public void LogError(string message, Exception? exception = null)
         {
             string logMessage = message;
@@ -67,6 +74,7 @@ namespace TextLength.Services
             WriteToLog("ERROR", logMessage);
         }
 
+        // テキスト選択の内容をログに記録
         public void LogTextSelection(string selectedText, int characterCount, int wordCount)
         {
             if (!_settings.LoggingEnabled) return;
@@ -75,6 +83,7 @@ namespace TextLength.Services
             WriteToLog("SELECTION", message);
         }
 
+        // 実際にファイルへ書き込む処理
         private void WriteToLog(string level, string message)
         {
             try
@@ -95,6 +104,7 @@ namespace TextLength.Services
             }
         }
 
+        // ログディレクトリのパスを返す
         public string GetLogDirectoryPath()
         {
             return _basePath;

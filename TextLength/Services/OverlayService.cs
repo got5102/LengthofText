@@ -13,6 +13,7 @@ using Hardcodet.Wpf.TaskbarNotification;
 
 namespace TextLength.Services
 {
+    // 選択テキストの情報を画面上にオーバーレイ表示するサービス
     public class OverlayService : IOverlayService
     {
         private readonly AppSettings _settings;
@@ -26,6 +27,7 @@ namespace TextLength.Services
         private int _operationId = 0;
         private readonly ILogService _logService;
 
+        // サービスの初期化
         public OverlayService(AppSettings settings, ILogService logService)
         {
             _settings = settings;
@@ -34,6 +36,7 @@ namespace TextLength.Services
             Debug.WriteLine("OverlayService: 初期化完了");
         }
 
+        // テキスト選択情報をもとにオーバーレイを表示
         public void ShowOverlay(TextSelectionInfo selectionInfo)
         {
             try
@@ -43,13 +46,11 @@ namespace TextLength.Services
                     Debug.WriteLine("OverlayService: ShowOverlay - textInfo が null です。オーバーレイを表示せずに戻ります。");
                     return;
                 }
-
                 if (!selectionInfo.IsActive || selectionInfo.CharacterCount <= 0)
                 {
                     Debug.WriteLine($"OverlayService: テキスト選択が無効 (Active={selectionInfo.IsActive}, CharCount={selectionInfo.CharacterCount})");
                     return;
                 }
-
                 Debug.WriteLine($"OverlayService: ShowOverlay - 表示位置: {selectionInfo.SelectionEndPoint}");
 
                 // 操作IDをインクリメント
