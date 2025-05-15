@@ -9,6 +9,7 @@ using System.IO;
 
 namespace TextLength.Views
 {
+    // 設定画面ウィンドウ（言語切り替えやViewModel連携を担当）
     public partial class SettingsWindow : Window
     {
         public SettingsWindow()
@@ -16,6 +17,7 @@ namespace TextLength.Views
             InitializeComponent();
         }
 
+        // ViewModelをセットし、イベントをバインド
         public void SetViewModel(SettingsViewModel viewModel)
         {
             DataContext = viewModel;
@@ -29,11 +31,13 @@ namespace TextLength.Views
             }
         }
         
+        // ViewModelから言語変更イベントを受けてリソースを切り替え
         private void ViewModel_LanguageChanged(object? sender, string language)
         {
             UpdateLanguageResources(language);
         }
         
+        // 言語リソースを切り替える
         private void UpdateLanguageResources(string language)
         {
             // リソースディクショナリを変更

@@ -6,6 +6,7 @@ using System.Diagnostics;
 
 namespace TextLength.Views
 {
+    // 画面上に文字数・単語数をオーバーレイ表示するウィンドウ
     public partial class OverlayWindow : Window
     {
         private readonly AppSettings _settings;
@@ -13,16 +14,14 @@ namespace TextLength.Views
         private readonly object _timerLock = new object();
         private bool _isClosing = false;
 
+        // 設定を受け取って初期化
         public OverlayWindow(AppSettings settings)
         {
             InitializeComponent();
             _settings = settings;
-            
             Debug.WriteLine("オーバーレイウィンドウを初期化しています");
-            
             // 設定の適用
             ApplySettings();
-            
             // タイマーの設定
             lock (_timerLock)
             {
@@ -45,7 +44,6 @@ namespace TextLength.Views
                     });
                 };
             }
-            
             // イベントハンドラを追加
             this.Closing += (s, e) =>
             {
@@ -54,10 +52,10 @@ namespace TextLength.Views
             };
         }
 
+        // 設定をオーバーレイに反映
         public void ApplySettings()
         {
             Debug.WriteLine("オーバーレイに設定を適用します");
-            
             try
             {
                 // フォントサイズの設定

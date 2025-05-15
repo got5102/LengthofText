@@ -18,6 +18,7 @@ using System.Windows.Threading;
 
 namespace TextLength.ViewModels
 {
+    // 設定画面のロジック・バインディングを担当するViewModel
     public class SettingsViewModel : ObservableObject
     {
         private readonly IStartupService _startupService;
@@ -25,7 +26,6 @@ namespace TextLength.ViewModels
         private readonly IOverlayService _overlayService;
         private readonly SettingsService _settingsService;
         private readonly ITextSelectionService _textSelectionService;
-
         private AppSettings _originalSettings; // 初期読み込み時の設定を保持
         private AppSettings _currentSettings;  // UIにバインドする現在の設定
         
